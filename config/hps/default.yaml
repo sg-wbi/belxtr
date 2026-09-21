@@ -1,0 +1,9 @@
+defaults:
+  - input
+  - index
+  - retriever
+  - optimization
+  - version
+  - _self_
+
+

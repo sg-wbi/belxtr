@@ -1,0 +1,15 @@
+per_gpu_batch_size_train: 8 
+max_epochs: 5
+gradient_accumulation_steps: 1
+lr_schedule: 'constant'
+weight_decay: 0.1
+warmup_proportion: 0.1 # DO NOT CHANGE THIS
+mixed_precision: "fp16"
+seed: 42
+amsgrad: false # https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW
+
+lr : 3e-6 # DO NOT CHANGE THIS 
+loss_weight: 1.0
+
+lr_qe: 1e-5 
+loss_weight_qe: 0.3 

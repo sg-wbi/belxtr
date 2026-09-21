@@ -1,0 +1,5 @@
+# index_type: 'ivfpq'
+index_type: null 
+index_code_size: 16
+index_nprobe: null 
+index_refresh: '-1'

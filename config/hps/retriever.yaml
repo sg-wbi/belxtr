@@ -1,0 +1,30 @@
+model: 'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext'
+# retriever: 'google-bert/bert-base-uncased' #110m
+# retriever: 'lightonai/colbertv2.0' # 110m
+# retriever: 'jhu-clsp/ettin-encoder-68m' # 68m
+# retriever: 'jhu-clsp/ettin-encoder-150m' # 150m
+#
+
+project_size: 128
+multivector: true
+mode : 'xtr'
+metric: 'cos' # 'ip', 'l2' (untested)
+share_weights: true
+scale_logits: true
+smooth_pool: true # use smooth-max (w/ learned weight) instead of max
+pooling: 'cls' # only for retriever_multivector=false
+
+# The totol amount of candidates loaded = retriever_topk_train * per_gpu_batch_size_train
+# The retriever will see all of them, while the reranker only `reranker_topk_train`
+# This mimics the inference setup, where we want the reranker to see `reranker_topk_predict` query-specific candidates
+topk_train: 32 
+token_topk_train: 2048 
+token_topk_negative_mining: 2048 # GPU index only supports min/max-K selection up to 2048 
+
+token_topk_predict: 2048 # GPU index only supports min/max-K selection up to 2048 
+
+qe: true
+qe_train: true
+qe_attend_mask: false 
+qe_negative_mining: false
+

@@ -1,0 +1,38 @@
+train: null
+
+train_on_dev: false
+train_on_test: false
+
+test: null
+
+kb_entity_based: true
+
+context_size: -1 # -1 = maximum length supported by model
+#####################################################
+# which token embeddings to include in query
+#####################################################
+query_cls: false
+query_prefix: false
+query_punctuation: false
+#####################################################
+qe_sim_threshold: 0.7
+
+candidate_size: 128
+
+##################################################
+# which data to include into entity representation
+##################################################
+aliases: true 
+description: false 
+##################################################
+
+##################################################
+# which token embeddings to include in index
+##################################################
+candidate_aliases: true 
+candidate_description: false 
+candidate_cls: false 
+candidate_prefix: false
+candidate_punctuation: false
+##################################################
+

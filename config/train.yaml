@@ -1,0 +1,34 @@
+defaults:
+  - hps: default
+  - _self_
+  # https://stackoverflow.com/questions/65104134/disable-file-output-of-hydra
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+# https://stackoverflow.com/questions/65104134/disable-file-output-of-hydra
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+run: null
+
+project_dir: /home/debian/data/belxtr
+
+per_gpu_batch_size_predict: 8
+
+topk_predict: 64
+
+eval_best: true # if false, eval last model
+
+index_batch_size: 1024
+
+index_force_cpu: false
+
+cache_dir: /home/debian/data/belxtr/cache
+
+disable_progress_bar: false
+
+subfolder: null
+
+num_proc: 40
